@@ -37,6 +37,24 @@ void InsertNewNode(struct Node* prevNode, int newData){
     prevNode->next=newNode;
 };
 
+// to delete a node from the middle of the linkedlist
+void DeleteNode(struct Node** headref,int key){
+    struct Node* temp= *headref;
+    struct Node* prev=NULL;
+    if(temp!=NULL && temp->data==prev){
+        *headref=temp->next;
+        free(temp);
+        return;
+    }
+    if(temp!=NULL&& temp->data!=key){
+        prev = temp;
+        temp=temp->next;
+    }
+    if(temp==NULL)return;
+    prev->next=temp->next;
+    free(temp);
+};
+
 //  Main function
 int main(){
     struct Node* firstNode= creatnode(1);
