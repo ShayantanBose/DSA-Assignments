@@ -66,6 +66,8 @@ int main(){
 
     InsertNewNode(secondNode,4);
 
+    DeleteNode(&firstNode,2);
+
     printf("Linked List:- ");
     printlist(firstNode);
 }
