@@ -27,6 +27,16 @@ void printlist(struct Node* head){
     }
 };
 
+// to insert in the middle of a LinkedList
+void InsertNewNode(struct Node* prevNode, int newData){
+    if(prevNode==NULL){
+        printf("The node is empty hence cannot insert");
+    }
+    struct Node* newNode=creatnode(newData);
+    newNode->next=prevNode->next;
+    prevNode->next=newNode;
+};
+
 //  Main function
 int main(){
     struct Node* firstNode= creatnode(1);
@@ -35,6 +45,8 @@ int main(){
 
     firstNode->next=secondNode;
     secondNode->next=thirdNode;
+
+    InsertNewNode(secondNode,4);
 
     printf("Linked List:- ");
     printlist(firstNode);
